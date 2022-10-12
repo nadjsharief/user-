@@ -50,7 +50,6 @@
                             <tr>
                                 <th>Name</th>
                                 <th>Email</th>
-                                <th>Role</th>
                                 <th>Action</th>
                             </tr>
                             <form action="{{ route('admin.update') }}" method="POST">
