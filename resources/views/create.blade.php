@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('admin1.store') }}">
+                    <form method="POST" action="{{ route('admin.store') }}">
                         @csrf
 
                         <div class="row mb-3">
@@ -65,8 +65,14 @@
 
                             <div class="col-md-6">
                                 <select name="roles">
+                                @if (Auth::user()->roles == 'super admin')
                                     <option value="admin">Admin</option>
                                     <option value="user">User</option>
+                                 @elseif (Auth::user()->roles == 'admin')
+                                 
+                                    <option value="user">User</option>
+                                    @else
+                    @endif
                             </select>
                             </div>
                         </div>
@@ -76,6 +82,7 @@
                                 <button type="submit" class="btn btn-primary">
                                    Submit
                                 </button>
+                                <a href="{{ URL::previous() }}" class="btn btn-default">Back</a>
                             </div>
                         </div>
                     </form>
