@@ -19,8 +19,9 @@
                             
                             <tr>
                            
-                                <td><input type="hidden" class="form-control" name="id" value="{{$users->id}}"/><input type="text" class="form-control" name="name" value="{{$users->name}}"/></td>
-                                <td><input type="email" class="form-control" name="email" value="{{$users->email}}"/></td>
+                                <td><input type="hidden" class="form-control id" name="id" value="{{$users->id}}"/>
+                                <input type="text" class="form-control fname" name="name" value="{{$users->name}}"/></td>
+                                <td><input type="email" class="form-control email" name="email" value="{{$users->email}}"/></td>
                                 <td>
                                     <div class="col-md-6">
                                         <select name="roles" data-parsley-trigger="keyup">
@@ -36,7 +37,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <input name="update" class="btn btn-success mx-2">Update</a>
+                                <input name="update" type='submit' class="btn btn-success mx-2 update" value='Update'>
                                     <a href="{{ URL::previous() }}" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i> Back</a>
                                 </td>
                                 
@@ -54,9 +55,10 @@
                             </tr>
                            
                             <tr>
-                            {{ csrf_field() }}
-                                <td><input type="hidden" class="form-control" name="id" value="{{$users->id}}"/><input type="text" class="form-control" name="name" value="{{$users->name}}"/></td>
-                                <td><input type="email" class="form-control" name="email" value="{{$users->email}}"/></td>
+                           
+                                <td><input type="hidden" class="form-control id" name="id" value="{{$users->id}}"/>
+                                <input type="text" class="form-control fname" name="name" value="{{$users->name}}"/></td>
+                                <td><input type="email" class="form-control email" name="email" value="{{$users->email}}"/></td>
                                 <td>
                                     <div class="col-md-6">
                                         <select name="roles" data-parsley-trigger="keyup">
@@ -72,7 +74,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                <input onclick="updateuser(this)" class="btn btn-success mx-2">Update</a>
+                                <input name="update" type='submit'  class="btn btn-success mx-2 update" value='Update'>
                                     <a href="{{ URL::previous() }}" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i> Back</a>
                                 </td>
                                 
@@ -95,12 +97,12 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.2/bootbox.min.js'></script>
 <script>
 $(document).ready(function () {
-    $('#update').on('click', function () {
+    $('.update').on('click', function () {
         // event.preventDefault();
-      var id = $('#id').val();
-      var name = $('#name').val();
-      var email = $('#email').val();
-      console.log(id);
+      var id = $('.id').val();
+      var name = $('.fname').val();
+      var email = $('.email').val();
+     
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -111,11 +113,13 @@ $(document).ready(function () {
             type: "POST",
             dataType: 'json',  
             data: {
-                id: id
+                id: id,
+                name:name,
+                email:email
             },
             success: function(data) {
                 
-             
+             alert("Successfully Updated")
             
             },
             error: function(data) {

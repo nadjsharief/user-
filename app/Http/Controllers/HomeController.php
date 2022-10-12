@@ -68,8 +68,7 @@ class HomeController extends Controller
     }
     public function update(Request $request)
     {
-        var_dump($request->id);
-        exit;
+        
         $data = User::findOrFail($request->id);
         $data->name = $request->input('name');
         $data->email = $request->input('email');
