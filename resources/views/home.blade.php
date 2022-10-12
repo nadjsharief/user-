@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
-                    @if (Auth::user()->roles == 'admin')
+                    @if (Auth::user()->roles == 'super admin')
                         <div class="alert alert-success" role="alert">
                         <table><a href="{{ route('admin.create') }}">add user</a>
   <tr>
@@ -25,8 +25,22 @@
 @endforeach
 </table>
                         </div>
-                    @elseif (Auth::user()->roles == 'user')
-                    hi
+                    @elseif (Auth::user()->roles == 'admin')
+                    <div class="alert alert-success" role="alert">
+                        <table><a href="{{ route('admin1.create') }}">add user</a>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>action</th>
+  </tr>
+  <tr>
+    @foreach($users as $users)
+    <td>{{$users->name}}</td>
+    <td>{{$users->email}}</td>
+    <td><a href="{{ route('admin1.edit', ['id'=>$users->id]) }}">update</a>  </td>
+</tr>
+@endforeach
+</table>
                     @else
                     @endif
 

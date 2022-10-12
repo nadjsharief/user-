@@ -65,7 +65,7 @@
 
                             <div class="col-md-6">
                                 <select name="roles">
-                                    <option value="admin">Admin</option>
+                                    
                                     <option value="user">User</option>
                             </select>
                             </div>
