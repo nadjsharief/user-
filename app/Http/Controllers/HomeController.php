@@ -74,10 +74,7 @@ class HomeController extends Controller
         $data->name = $request->input('name');
         $data->email = $request->input('email');
         $data->save();
-        return response()->json([
-            'success' => true,
-            'message' => 'Status updated', 
-          ], 200);
+        return $data;
     }
     public function update1(Request $request)
     {
