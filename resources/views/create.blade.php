@@ -67,7 +67,7 @@
                                 <button type="submit" class="btn btn-primary">
                                    Submit
                                 </button>
-                                <a href="{{ URL::previous() }}" class="btn btn-default">Back</a>
+                                <a href="{{ URL::previous() }}" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i> Back</a>
                             </div>
                         </div>
                     </form>
