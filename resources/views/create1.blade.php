@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Add new user</div>
+                <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('admin1.store') }}">
@@ -65,7 +65,7 @@
 
                             <div class="col-md-6">
                                 <select name="roles">
-                                    <option value="admin">Admin</option>
+                                    
                                     <option value="user">User</option>
                             </select>
                             </div>

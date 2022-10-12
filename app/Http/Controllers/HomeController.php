@@ -32,7 +32,20 @@ class HomeController extends Controller
     {
         return view('create');
     }
+    public function create1()
+    {
+        return view('create1');
+    }
     public function store(Request $request){
+        return User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'roles' => $request->roles,
+        ]);
+
+    }
+    public function store1(Request $request){
         return User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -47,10 +60,28 @@ class HomeController extends Controller
         
         return view('edit', ['users' => $users]);
     }
+    public function edit1($id)
+    {
+        $users = User::findOrFail($id);
+        
+        return view('edit', ['users' => $users]);
+    }
     public function update(Request $request)
     {
         var_dump($request->id);
         exit;
+        $data = User::findOrFail($request->id);
+        $data->name = $request->input('name');
+        $data->email = $request->input('email');
+        $data->save();
+        return response()->json([
+            'success' => true,
+            'message' => 'Status updated', 
+          ], 200);
+    }
+    public function update1(Request $request)
+    {
+       
         $data = User::findOrFail($request->id);
         $data->name = $request->input('name');
         $data->email = $request->input('email');

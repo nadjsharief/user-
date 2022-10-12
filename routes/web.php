@@ -32,3 +32,9 @@ Route::get('/create', [App\Http\Controllers\HomeController::class, 'create'])->n
 Route::post('/update', [App\Http\Controllers\HomeController::class, 'update'])->name('admin.update');
 Route::post('/store', [App\Http\Controllers\HomeController::class, 'store'])->name('admin.store');
 Route::get('/delete/{id}', [App\Http\Controllers\HomeController::class, 'destroy'])->name('admin.delete');
+
+Route::get('/create1', [App\Http\Controllers\HomeController::class, 'create1'])->name('admin1.create');
+Route::get('/edit/{id}', [App\Http\Controllers\HomeController::class, 'edit1'])->name('admin1.edit');
+Route::get('/create', [App\Http\Controllers\HomeController::class, 'create1'])->name('admin1.create');
+Route::post('/update', [App\Http\Controllers\HomeController::class, 'update1'])->name('admin1.update');
+Route::post('/store', [App\Http\Controllers\HomeController::class, 'store1'])->name('admin1.store');
