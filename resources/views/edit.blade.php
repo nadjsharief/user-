@@ -5,29 +5,27 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">Update</div>
 
                 <div class="card-body">
-                    @if (Auth::user()->roles == 'admin')
-                        <div class="alert alert-success" role="alert">
-                        <table>
-  <tr>
-    <th>Name</th>
-    <th>Email</th>
-    <th>action</th>
-  </tr>
-  <form action="{{ route('admin.update') }}" method="POST">
-  <tr>
-  {{ csrf_field() }}
-    <td><input type="hidden" name="id" value="{{$users->id}}"/><input type="text" name="name" value="{{$users->name}}"/></td>
-    <td><input type="email" name="email" value="{{$users->email}}"/></td>
-    <td><input type="button" name="submit" value="Submit" class="btn btn-primary"></td>
-</tr>
-</form>
+                    @if (Auth::user()->roles == 'super admin')
+                        <table class="table table-striped">
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Action</th>
+                            </tr>
+                            <form action="{{ route('admin.update') }}" method="POST">
+                            <tr>
+                            {{ csrf_field() }}
+                                <td><input type="hidden" class="form-control" name="id" value="{{$users->id}}"/><input type="text" class="form-control" name="name" value="{{$users->name}}"/></td>
+                                <td><input type="email" class="form-control" name="email" value="{{$users->email}}"/></td>
+                                <td><input type="button" name="submit" value="Update" class="btn btn-success"></td>
+                            </tr>
+                            </form>
 
 
-</table>
-                        </div>
+                        </table>
                     @elseif (Auth::user()->roles == 'user')
                     hi
                     @else
