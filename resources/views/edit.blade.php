@@ -36,7 +36,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <input type="button" name="submit" value="Update" class="btn btn-success mx-2">
+                                    <input onclick="updateuser(this)" class="btn btn-success mx-2">Update</a>
                                     <a href="{{ URL::previous() }}" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i> Back</a>
                                 </td>
                                 
@@ -73,7 +73,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <input type="button" name="submit" value="Update" class="btn btn-success mx-2">
+                                <input onclick="updateuser(this)" class="btn btn-success mx-2">Update</a>
                                     <a href="{{ URL::previous() }}" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i> Back</a>
                                 </td>
                                 
