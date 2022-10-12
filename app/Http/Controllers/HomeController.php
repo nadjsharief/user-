@@ -34,7 +34,7 @@ class HomeController extends Controller
     }
     public function create1()
     {
-        return view('create');
+        return view('create1');
     }
     public function store(Request $request){
         return User::create([
