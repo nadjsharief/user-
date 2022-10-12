@@ -20,7 +20,11 @@
                             {{ csrf_field() }}
                                 <td><input type="hidden" class="form-control" name="id" value="{{$users->id}}"/><input type="text" class="form-control" name="name" value="{{$users->name}}"/></td>
                                 <td><input type="email" class="form-control" name="email" value="{{$users->email}}"/></td>
-                                <td><input type="button" name="submit" value="Update" class="btn btn-success"></td>
+                                <td>
+                                    <input type="button" name="submit" value="Update" class="btn btn-success mx-2">
+                                    <a href="{{ URL::previous() }}" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i> Back</a>
+                                </td>
+                                
                             </tr>
                             </form>
 

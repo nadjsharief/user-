@@ -78,11 +78,11 @@
                         </div>
 
                         <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                            <div class="d-flex justify-content-center">
+                                <button type="submit" class="btn btn-primary mx-2">
                                    Submit
                                 </button>
-                                <a href="{{ URL::previous() }}" class="btn btn-default">Back</a>
+                                <a href="{{ URL::previous() }}" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i> Back</a>
                             </div>
                         </div>
                     </form>
