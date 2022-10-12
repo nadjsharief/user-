@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use app\Models\User;
 use Illuminate\Support\Facades\Hash;
-
+use DB;
 class HomeController extends Controller
 {
     /**
@@ -39,6 +39,7 @@ class HomeController extends Controller
             'password' => Hash::make($request->password),
             'roles' => $request->roles,
         ]);
+
     }
     public function edit($id)
     {
@@ -58,5 +59,12 @@ class HomeController extends Controller
             'success' => true,
             'message' => 'Status updated', 
           ], 200);
+    }
+    public function destroy($id) {
+
+        $blog = DB::table('users')->where('id',$id)->delete();
+    
+        // return redirect('/index');
+    
     }
 }

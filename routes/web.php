@@ -29,4 +29,6 @@ Route::resource('home', 'App\Http\Controllers\HomeController');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/edit/{id}', [App\Http\Controllers\HomeController::class, 'edit'])->name('admin.edit');
 Route::get('/create', [App\Http\Controllers\HomeController::class, 'create'])->name('admin.create');
+Route::post('/update', [App\Http\Controllers\HomeController::class, 'update'])->name('admin.update');
 Route::post('/store', [App\Http\Controllers\HomeController::class, 'store'])->name('admin.store');
+Route::get('/delete/{id}', [App\Http\Controllers\HomeController::class, 'destroy'])->name('admin.delete');

@@ -20,7 +20,7 @@
     @foreach($users as $users)
     <td>{{$users->name}}</td>
     <td>{{$users->email}}</td>
-    <td><a href="{{ route('admin.edit', ['id'=>$users->id]) }}">update</a> delete</td>
+    <td><a href="{{ route('admin.edit', ['id'=>$users->id]) }}">update</a> <a href="{{ route('admin.delete', ['id'=>$users->id]) }}">delete</a> </td>
 </tr>
 @endforeach
 </table>

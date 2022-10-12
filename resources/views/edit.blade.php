@@ -16,7 +16,7 @@
     <th>Email</th>
     <th>action</th>
   </tr>
-  <form action="{{ route('update') }}" method="POST">
+  <form action="{{ route('admin.update') }}" method="POST">
   <tr>
   {{ csrf_field() }}
     <td><input type="hidden" name="id" value="{{$users->id}}"/><input type="text" name="name" value="{{$users->name}}"/></td>
