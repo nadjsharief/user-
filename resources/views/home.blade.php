@@ -16,21 +16,25 @@
                             <a class="btn btn-primary m-2 px-4" style="border-radius: 50px" href="{{ route('admin.create') }}">
                                 <span><i class="fa-solid fa-plus"></i></span> ADD USER</a>
                         </div>
-                        <table>
+                        <table class="table table-striped">
                             <tr>
                                 <th>Name</th>
                                 <th>Email</th>
-                                <th>action</th>
+                                <th>Role</th>
+                                <th>Action</th>
                             </tr>
                             <tr>
                                 @foreach($users as $users)
                                 <td>{{$users->name}}</td>
                                 <td>{{$users->email}}</td>
-                                <td><a href="{{ route('admin.edit', ['id'=>$users->id]) }}">update</a> <a href="{{ route('admin.delete', ['id'=>$users->id]) }}">delete</a> </td>
+                                <td class="text-capitalize">{{$users->roles}}</td>
+                                <td>
+                                    <a class="btn btn-success" href="{{ route('admin.edit', ['id'=>$users->id]) }}"><span><i class="fa-solid fa-pen-to-square"></i></span></a> 
+                                    <a class="btn btn-danger" href="{{ route('admin.delete', ['id'=>$users->id]) }}"><span><i class="fa-solid fa-trash"></i></span></a> </td>
                             </tr>
                                 @endforeach
                         </table>
-                    </div>
+                    
                     @elseif (Auth::user()->roles == 'admin')
                     <div class="d-flex justify-content-end">
                             <a class="btn btn-primary m-2 px-4" style="border-radius: 50px" href="{{ route('admin1.create') }}">
@@ -46,14 +50,14 @@
                                 @foreach($users as $users)
                                 <td>{{$users->name}}</td>
                                 <td>{{$users->email}}</td>
-                                <td><a href="{{ route('admin1.edit', ['id'=>$users->id]) }}">update</a>  </td>
+                                <td><a href="{{ route('admin1.edit', ['id'=>$users->id]) }}"><span><i class="fa-solid fa-pen"></i></span> update</a>  </td>
                             </tr>
                             @endforeach
                         </table>
                     @else
                     @endif
-                    
                     </div>
+                </div>
             </div>
         </div>
     </div>

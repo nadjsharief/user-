@@ -64,8 +64,9 @@
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                            <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-success" />
-     
+                                <button type="submit" class="btn btn-primary">
+                                   Submit
+                                </button>
                                 <a href="{{ URL::previous() }}" class="btn btn-default">Back</a>
                             </div>
                         </div>
