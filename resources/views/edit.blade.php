@@ -72,7 +72,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                <input name="update" class="btn btn-success mx-2">Update</a>
+                                <input onclick="updateuser(this)" class="btn btn-success mx-2">Update</a>
                                     <a href="{{ URL::previous() }}" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i> Back</a>
                                 </td>
                                 

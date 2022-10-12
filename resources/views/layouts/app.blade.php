@@ -116,10 +116,10 @@
                                     
                                 </div>
                             </li>
-                            <li>
-                                <a class="dropdown-item" href="{{ route('logout') }}"
+                            <li class="nav-item">
+                                <a class="btn btn-danger" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                                     document.getElementById('logout-form').submit();"><i class="fa-solid fa-right-from-bracket"></i> 
                                         {{ __('Logout') }}
                                     </a>
 
